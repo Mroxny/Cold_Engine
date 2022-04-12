@@ -1,6 +1,6 @@
 #include <Windows.h>
 
-LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 	
 	switch (msg){
 
@@ -9,7 +9,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 		break;
 	}
 
-	return DefWindowProc(hWnd, msg, wParam, lParam);
+	return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
 int CALLBACK WinMain(
@@ -59,14 +59,14 @@ int CALLBACK WinMain(
 	LPCWSTR pWindowName = L"Cold Engine";
 
 
-	HWND hWnd = CreateWindowEx(
+	HWND hwnd = CreateWindowEx(
 		0, pClassName, pWindowName,
 		WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU,
 		200, 200, 640, 480,
 		nullptr, nullptr, hInstance, nullptr
 	);
 
-	ShowWindow(hWnd, SW_SHOW);
+	ShowWindow(hwnd, SW_SHOW);
 
 	MSG msg;
 	BOOL gResult;
