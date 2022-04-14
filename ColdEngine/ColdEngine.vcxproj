@@ -19,10 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ColdWindowException.cpp" />
+    <ClCompile Include="Window.cpp" />
     <ClCompile Include="WinMainConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CE_Win.h" />
+    <ClInclude Include="ColdWindowException.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
