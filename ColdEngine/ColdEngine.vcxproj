@@ -20,13 +20,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ColdWindowException.cpp" />
+    <ClCompile Include="KeyboardManager.cpp" />
+    <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WinMainConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CE_Win.h" />
     <ClInclude Include="ColdWindowException.h" />
+    <ClInclude Include="KeyboardManager.h" />
+    <ClInclude Include="MouseManager.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ColdEngine.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\CE_LOGO.ICO" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

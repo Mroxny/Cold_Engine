@@ -1,6 +1,10 @@
 #pragma once
 #include "CE_Win.h"
 #include "ColdWindowException.h"
+#include "KeyboardManager.h"
+#include "MouseManager.h"
+
+
 
 
 class Window
@@ -51,12 +55,14 @@ public:
 	Window(const Window&) = delete;
 	Window& operator=(const Window&) = delete;
 
-	/*void SetTitle(const std::string& title);
+	void SetTitle(const std::string& title);
 	void EnableCursor() noexcept;
 	void DisableCursor() noexcept;
 	bool CursorEnabled() const noexcept;
 	static std::optional<int> ProcessMessages() noexcept;
-	Graphics& Gfx();*/
+	static LPWSTR convertCharsToLPWSTR(const char* text);
+
+	//Graphics& Gfx();
 private:
 
 	/*void ConfineCursor() noexcept;
@@ -70,8 +76,8 @@ private:
 	static LRESULT CALLBACK HandleMsgThunk(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept;
 	LRESULT HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept;
 public:
-	/*Keyboard kbd;
-	Mouse mouse;*/
+	KeyboardManager kbd;
+	MouseManager mouse;
 private:
 	bool cursorEnabled = true;
 	int width;

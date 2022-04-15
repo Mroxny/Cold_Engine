@@ -1,14 +1,6 @@
 #include "Window.h"
+#include <sstream>
 
-auto convertCharsToLPWSTR(const char* text) -> LPWSTR {
-	size_t size = strlen(text) + 1;
-	wchar_t* wtext = new wchar_t[size];
-
-
-	size_t outSize;
-	mbstowcs_s(&outSize, wtext, size, text, size - 1);
-	return wtext;
-}
 
 int CALLBACK WinMain(
 	HINSTANCE hInstance,
@@ -28,18 +20,18 @@ int CALLBACK WinMain(
 		{
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
-		}
 
+		}
 		if (gResult == -1) return -1;
 		else return msg.wParam;
 	}
 	catch (const ColdWindowException& e)
 	{
-		MessageBox(nullptr, convertCharsToLPWSTR(e.what()), convertCharsToLPWSTR(e.GetType()), MB_OK | MB_ICONEXCLAMATION);
+		MessageBox(nullptr, Window::convertCharsToLPWSTR(e.what()), Window::convertCharsToLPWSTR(e.GetType()), MB_OK | MB_ICONEXCLAMATION);
 	}
 	catch (const std::exception& e)
 	{
-		MessageBox(nullptr, convertCharsToLPWSTR(e.what()), L"Standard Exception", MB_OK | MB_ICONEXCLAMATION);
+		MessageBox(nullptr, Window::convertCharsToLPWSTR(e.what()), L"Standard Exception", MB_OK | MB_ICONEXCLAMATION);
 	}
 	catch (...)
 	{
