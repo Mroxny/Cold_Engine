@@ -1,5 +1,4 @@
-#include "Window.h"
-#include <sstream>
+#include "AppClass.h"
 
 
 int CALLBACK WinMain(
@@ -10,20 +9,7 @@ int CALLBACK WinMain(
 {
 	try
 	{
-		Window wnd(800, 300, L"Cold Engine");
-
-
-		MSG msg;
-		BOOL gResult;
-
-		while ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-
-		}
-		if (gResult == -1) return -1;
-		else return msg.wParam;
+		return AppClass{}.StartProgram();
 	}
 	catch (const ColdWindowException& e)
 	{

@@ -3,6 +3,7 @@
 #include "ColdWindowException.h"
 #include "KeyboardManager.h"
 #include "MouseManager.h"
+#include <optional>
 
 
 
